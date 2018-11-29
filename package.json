@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fengyaogit123/browser-device-js.git"
+    "url": "https://github.com/mathxlee/browser-device-js.git"
   },
   "keywords": [
     "device",
     "browser",
     "browser-device-js"
   ],
-  "author": "1724238345@qq.com",
+  "author": "math.lee@qq.com",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",

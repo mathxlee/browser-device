@@ -1,6 +1,11 @@
 # 介绍
 
 browser-device-js 是一个轻量级获取浏览器和手机信息的库
+
+# 来源
+
+项目fork自 fengyaogit123/browser-device-js，但是作者似乎没有更新了，又需要一些新功能，那就自己动手开发一个新版啦~
+
 # 优点
 
 1. 能够获取众多ios的机型，包括iphoneX
