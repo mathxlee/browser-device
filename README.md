@@ -1,6 +1,6 @@
 # 介绍
 
-@mathxlee/browser-device 是一个轻量级获取浏览器和手机信息的库
+@mathx/browser-device 是一个轻量级获取浏览器和手机信息的库
 
 # 来源
 
@@ -24,7 +24,7 @@
 
 通过以下方式都可以下载：
 
-执行`npm i @mathxlee/browser-device`
+执行`npm i @mathx/browser-device`
 
 # 如何使用
 
@@ -41,7 +41,7 @@
 
 ```js
 
-    import Device from "@mathxlee/browser-device"
+    import Device from "@mathx/browser-device"
     var d = new Device()
     d.getDevice() //获取所有信息
     /**

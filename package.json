@@ -1,7 +1,7 @@
 {
-  "name": "@mathxlee/browser-device",
+  "name": "@mathx/browser-device",
   "version": "1.0.0",
-  "description": "@mathxlee/browser-device 是一个轻量级获取浏览器和手机信息的库",
+  "description": "@mathx/browser-device 是一个轻量级获取浏览器和手机信息的库",
   "main": "./lib/device.js",
   "scripts": {
     "test": "",
@@ -16,7 +16,7 @@
     "device",
     "browser",
     "browser-device-js",
-    "@mathxlee/browser-device"
+    "@mathx/browser-device"
   ],
   "author": "math.lee@qq.com",
   "license": "ISC",
