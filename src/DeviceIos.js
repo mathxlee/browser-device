@@ -36,7 +36,7 @@ export default class DeviceIos {
             "Apple A12 GPU": {
                 1792: ["iPhone Xr"],
                 2436: ["iPhone Xs"],
-                2688: ["iPhone XS Max"],
+                2688: ["iPhone Xs Max"],
             }
         }
     }
