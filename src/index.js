@@ -1,4 +1,5 @@
-import Device from './Device'
+import Device from './device'
+
 window.Device = Device
 
 export default Device

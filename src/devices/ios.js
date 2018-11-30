@@ -1,5 +1,7 @@
+import DeviceBasic from './basic';
+
 //获取IOS的机型
-export default class DeviceIos {
+export default class DeviceIos extends DeviceBasic {
     constructor() {
         this.devices = {
             "Apple A7 GPU": {
@@ -50,9 +52,6 @@ export default class DeviceIos {
         } catch (e) {
             return ''
         }
-    }
-    getHeight() {
-        return Math.max(screen.width, screen.height) * (window.devicePixelRatio || 1);
     }
     getPhoneType(GPU) {
         let height = this.getHeight()

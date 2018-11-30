@@ -1,4 +1,5 @@
-import DeviceIos from './DeviceIos'
+import DeviceIos from './devices/ios'
+
 export default class Device {
     constructor(userAgent) {
         if (userAgent) {
@@ -25,12 +26,13 @@ export default class Device {
 
         if (this.isMobile()) {
             let phone = this.getPhoneSystemType()
-            if (phone == 'IOS') {
+
+            if (phone.toLowerCase() == 'ios') {
                 device.phoneSystemVer = this.getIOSV()
                 device.phoneName = new DeviceIos().getPhoneType();
             }
 
-            if (phone == 'Android') {
+            if (phone.toLowerCase() == 'android') {
                 device.phoneSystemVer = this.getAndroidV()
                 device.phoneName = "Android"
             }

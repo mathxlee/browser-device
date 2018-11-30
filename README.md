@@ -9,6 +9,8 @@
 
 # 更新日志
 
+2018.11.30 更新代码组织方式
+
 2018.11.29 更新iOS设备信息（新增iPhone Xr, iPhone Xs, iPhone Xs Max）
 
 # 优点
