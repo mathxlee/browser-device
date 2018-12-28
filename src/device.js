@@ -14,34 +14,41 @@ export default class Device {
     }
 
     getDevice() {
+        let deviceSystem = '';
         let device = {
             browserVer: "",//浏览器版本
             browserName: "",//浏览器名称 QQ 火狐 谷歌 360 苹果 搜狗 IE
-            phoneSystemType: "",//手机系统类型 android ios
-            phoneSystemVer: "",//手机系统版本  android 4.1 ios6
-            phoneName: "",//小米 魅族
+            deviceSystemType: "",//手机系统类型 android ios
+            deviceSystemVer: "",//手机系统版本  android 4.1 ios6
+            deviceName: "",//小米 魅族
+            isMobile: this.isMobile()
         };
 
-        device.browserName = this.getBrowser()
+        device.browserName = this.getBrowser();
 
-        if (this.isMobile()) {
-            let phone = this.getPhoneSystemType()
+        if (device.isMobile) {
+            deviceSystem = this.getMobileDeviceSystemType();
 
-            if (phone.toLowerCase() == 'ios') {
-                device.phoneSystemVer = this.getIOSV()
-                device.phoneName = new DeviceIos().getPhoneType();
+            if (deviceSystem.toLowerCase() == 'ios') {
+                device.deviceSystemVer = this.getIOSV();
+                device.deviceName = new DeviceIos().getPhoneType();
             }
 
-            if (phone.toLowerCase() == 'android') {
-                device.phoneSystemVer = this.getAndroidV()
-                device.phoneName = "Android"
+            if (deviceSystem.toLowerCase() == 'android') {
+                device.deviceSystemVer = this.getAndroidV();
+                device.deviceName = "Android";
             }
 
-            device.phoneSystemType = phone
+            device.deviceSystemType = deviceSystem;
             //手机类型 比如小米 魅族 可以通过GPU判断 后期增加
             //android版本  4.1 4.2  ios几
 
             return device;
+        } else {
+            deviceSystem = this.getPCSystemType();
+            device.deviceSystemVer = ''; // PC不返回版本号
+            device.deviceSystemType = deviceSystem;
+            device.deviceName = deviceSystem;
         }
 
         return device;
@@ -75,15 +82,54 @@ export default class Device {
     }
 
     //返回手机系统
-    getPhoneSystemType() {
+    getMobileDeviceSystemType() {
         let u = this.ua;
         let isAndroid = u.indexOf('android') > -1 || u.indexOf('adr') > -1; //android终端
         let isiOS = !!u.match(/\(i[^;]+;( u;)? cpu.+mac os x/); //ios终端
+
         let isWinPhone = u.indexOf('Windows Phone'.toLowerCase()) > -1
         if (isAndroid) return 'Android'
-        if (isiOS) return 'IOS'
-        if(isWinPhone) return 'Windows Phone'
+        if (isiOS) return 'iOS'
+        if (isWinPhone) return 'Windows Phone'
+
         return ''
+    }
+
+    // 返回PC系统信息
+    getPCSystemType() {
+        let systemName = '';
+        const ua = this.ua;
+        const mapSystem = {
+            'Windows 3.11': 'Win16',
+            'Windows 95': '(Windows 95)|(Win95)|(Windows_95)',
+            'Windows 98': '(Windows 98)|(Win98)',
+            'Windows 2000': '(Windows NT 5.0)|(Windows 2000)',
+            'Windows XP': '(Windows NT 5.1)|(Windows XP)',
+            'Windows Server 2003': '(Windows NT 5.2)',
+            'Windows Vista': '(Windows NT 6.0)',
+            'Windows 7': '(Windows NT 6.1)',
+            'Windows 8': '(Windows NT 6.2)|(WOW64)',
+            'Windows 10': '(Windows 10.0)|(Windows NT 10.0)',
+            'Windows NT 4.0': '(Windows NT 4.0)|(WinNT4.0)|(WinNT)|(Windows NT)',
+            'Windows ME': 'Windows ME',
+            'Open BSD': 'OpenBSD',
+            'Sun OS': 'SunOS',
+            'Linux': '(Linux)|(X11)',
+            'Mac OS': '(Mac_PowerPC)|(Macintosh)',
+            'QNX': 'QNX',
+            'BeOS': 'BeOS',
+            'OS/2': 'OS/2',
+            'Search Bot': '(nuhk)|(Googlebot)|(Yammybot)|(Openbot)|(Slurp)|(MSNBot)|(Ask Jeeves/Teoma)|(ia_archiver)'
+        };
+
+        for (let sys in mapSystem) {
+            if (!!ua.match(new RegExp(mapSystem[sys]))) {
+                systemName = sys;
+                break;
+            }
+        }
+
+        return systemName;
     }
 
     //是否是PC
@@ -116,7 +162,8 @@ export default class Device {
         if (is("QQBrowser")) return "QQBrowser"
         if (is("Safari") && !is("Chrome")) return "Safari"
         if (is("Safari") && is("Chrome")) return "Chrome"
-        return ''
+        
+        return '';
     }
 }
 
