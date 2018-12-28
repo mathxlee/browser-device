@@ -8,6 +8,7 @@
 下面大部分文档来自原作者 fengyaogit123~
 
 # 更新日志
+2018.12.28 更新字段名，从phone改为device，新增PC端设备识别
 
 2018.11.30 更新代码组织方式
 
@@ -20,6 +21,8 @@
 2. 支持amd 
 
 3. 区分 Edge IE11  IE11以下 Opera Firefox 微信内置浏览器 QQ浏览器 UC浏览器 Safari
+
+4. 同时识别PC和移动设备
 
 > `Android` 手机太多,没有基础数据，所以类型统一为Android 后面的版本数据会补上
 
@@ -51,9 +54,9 @@
     {
         browserVer: "",//浏览器版本
         browserName: "",//浏览器名称 Edge IE11  IE Opera Firefox WeiXin QQ UC Safari
-        phoneSystemType: "",//手机系统类型 android / ios
-        phoneSystemVer: "",//手机系统版本  android 4.1 / ios 6
-        phoneName: "",//iPhone 8 /iPhone X    Android  
+        deviceSystemType: "",//手机系统类型 android / ios
+        deviceSystemVer: "",//手机系统版本  android 4.1 / ios 6
+        deviceName: "",//iPhone 8 /iPhone X    Android  
     }
 
     **/
