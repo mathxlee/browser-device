@@ -48,7 +48,7 @@ export default class Device {
             deviceSystem = this.getPCSystemType();
             device.deviceSystemVer = ''; // PC不返回版本号
             device.deviceSystemType = deviceSystem;
-            device.deviceName = deviceSystem;
+            device.deviceName = 'PC';
         }
 
         return device;

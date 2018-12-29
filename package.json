@@ -1,6 +1,6 @@
 {
   "name": "@mathx/browser-device",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "@mathx/browser-device 是一个轻量级获取浏览器和手机信息的库",
   "main": "./lib/device.js",
   "scripts": {
