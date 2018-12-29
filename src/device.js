@@ -123,7 +123,7 @@ export default class Device {
         };
 
         for (let sys in mapSystem) {
-            if (!!ua.match(new RegExp(mapSystem[sys]))) {
+            if (!!ua.match(new RegExp(mapSystem[sys], 'ig'))) {
                 systemName = sys;
                 break;
             }
