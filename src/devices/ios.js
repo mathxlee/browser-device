@@ -3,7 +3,9 @@ import DeviceBasic from './basic';
 //获取IOS的机型
 export default class DeviceIos extends DeviceBasic {
     constructor() {
-        this.setDevices();
+        () => {
+            this.setDevices();
+        }
     }
 
     setDevices() {
