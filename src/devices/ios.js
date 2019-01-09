@@ -3,6 +3,10 @@ import DeviceBasic from './basic';
 //获取IOS的机型
 export default class DeviceIos extends DeviceBasic {
     constructor() {
+        this.setDevices();
+    }
+
+    setDevices() {
         this.devices = {
             "Apple A7 GPU": {
                 1136: ["iPhone 5", "iPhone 5s"],
