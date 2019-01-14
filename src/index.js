@@ -1,10 +1,10 @@
 import Device from './device'
 
-if (window) {
+if (typeof window != 'undefined') {
 	window.Device = Device
 }
 
-if (global) {
+if (typeof global != 'undefined') {
 	global.Device = Device
 }
 
