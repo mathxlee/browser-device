@@ -6,7 +6,7 @@ export default class Device {
             return this.ua = userAgent.toLowerCase();
         }
 
-        if (window) {
+        if (typeof window != "undefined") {
             return this.ua = window.navigator.userAgent.toLowerCase()
         }
 
