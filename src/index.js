@@ -1,5 +1,11 @@
 import Device from './device'
 
-window.Device = Device
+if (window) {
+	window.Device = Device
+}
+
+if (global) {
+	global.Device = Device
+}
 
 export default Device

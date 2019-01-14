@@ -1,6 +1,6 @@
 {
   "name": "@mathx/browser-device",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "@mathx/browser-device 是一个轻量级获取浏览器和手机信息的库",
   "main": "./lib/device.js",
   "scripts": {
@@ -22,14 +22,14 @@
   "author": "math.lee@qq.com",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.1.6",
+    "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.1.6",
-    "babel-loader": "^8.0.4",
+    "babel-loader": "^8.0.5",
     "babel-preset-es2015": "^6.24.1",
-    "uglifyjs-webpack-plugin": "^2.0.1",
-    "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10"
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {}
 }
